@@ -14,6 +14,8 @@ export class AllMoviesComponent implements OnInit {
   @Input() genre!: Genre["name"];
 
   movies: Movie[] = [];
+
+  
   
   constructor(
     private postMoviesService: PostMoviesService,
@@ -28,7 +30,7 @@ export class AllMoviesComponent implements OnInit {
       console.log('test')
     }
 
-  
+    
     getByGenre(genre: string){
       const NavGenresComponent = String(this.route.snapshot.paramMap.get('genre'));
       this.postMoviesService.getGenre(genre)
